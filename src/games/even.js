@@ -1,16 +1,12 @@
 import readlineSync from 'readline-sync'
+import { getRandomNumber, greeting } from '../index.js'
 
 const gameEven = () => {
-  console.log('Welcome to the Brain Games!')
-  let userName = readlineSync.question('May I have your name? ')
-  console.log(`Hello, ${userName}!`)
-  console.log('Answer "yes" if the number is even, otherwise answer "no".')
-
+  let userName = greeting('Answer "yes" if the number is even, otherwise answer "no".')
   let counter = 0
 
   while (counter < 3) {
-    let magicNumber = 0
-    magicNumber += (Math.floor(Math.random() * 100 + 1))
+    let magicNumber = getRandomNumber(100)
 
     const correctAnswer = (magicNumber % 2 === 0) ? 'yes' : 'no'
 
