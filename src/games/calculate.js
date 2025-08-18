@@ -6,10 +6,10 @@ const gameCalculate = () => {
 
   let counter = 0
   while (counter < 3) {
-    const a = getRandomNumber(25)
-    const b = getRandomNumber(25)
+    const a = getRandomNumber(1, 25)
+    const b = getRandomNumber(1, 25)
     let correctAnswer = 0
-    switch (getRandomNumber(3)) {
+    switch (getRandomNumber(1, 3)) {
       case 1:
         correctAnswer = addition(a, b)
         break

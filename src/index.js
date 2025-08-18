@@ -8,8 +8,8 @@ const greeting = (task) => {
   return userName
 }
 
-const getRandomNumber = (n) => {
-  return (Math.floor(Math.random() * n + 1))
+const getRandomNumber = (min, max) => {
+  return (Math.floor(Math.random() * max + min))
 }
 
 const addition = (a, b) => {
@@ -37,4 +37,14 @@ const getGCD = (a, b) => {
   return a
 }
 
-export { getRandomNumber, greeting, addition, subtraction, multiplication, getGCD }
+const getProgression = (a, b) => {
+  const progressionArray = [a]
+  while (progressionArray.length !== 10) {
+    const x = a + b
+    progressionArray.push(x)
+    a = x
+  }
+  return progressionArray
+}
+
+export { getRandomNumber, greeting, addition, subtraction, multiplication, getGCD, getProgression }

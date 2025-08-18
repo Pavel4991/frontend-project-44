@@ -6,7 +6,7 @@ const gameEven = () => {
   let counter = 0
 
   while (counter < 3) {
-    let magicNumber = getRandomNumber(100)
+    let magicNumber = getRandomNumber(1, 100)
 
     const correctAnswer = (magicNumber % 2 === 0) ? 'yes' : 'no'
 
