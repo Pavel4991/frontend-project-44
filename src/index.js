@@ -61,13 +61,12 @@ const getProgression = (a, b) => {
   let progression = []
   const start = a
   const step = b
-  for (let index = 0; index < 10; index +=1) {
-    let currentItem = start + index * step  
+  for (let index = 0; index < 10; index += 1) {
+    let currentItem = start + index * step
     progression.push(currentItem)
   }
   return progression
 }
-
 
 const primeNumber = (number) => {
   let result = true
