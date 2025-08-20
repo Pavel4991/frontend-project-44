@@ -4,13 +4,13 @@
 ### SonarQubeCloude Badge
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=Pavel4991_frontend-project-44&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=Pavel4991_frontend-project-44)
 
-##Игры разума
+## Игры разума
 Консольное приложение, представляющее из себя набор из пяти простых математических игр. Они построены по принципу популярных мобильных приложений для прокачки мозга.
 
-##Минимальные требования
+## Минимальные требования
 Наличие операционной системы семейства Unix
 
-##Установка
+## Установка
 sudo npm link
 Запуск игр с помощью команд:
 
