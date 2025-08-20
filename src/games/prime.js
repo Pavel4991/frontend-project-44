@@ -1,31 +1,16 @@
-import readlineSync from 'readline-sync'
-import { getRandomNumber, greeting, primeOrNot } from '../index.js'
+import { getRandomNumber, greeting, primeOrNot, gameAction } from '../index.js'
 
 const gamePrime = () => {
   let userName = greeting('Answer "yes" if given number is prime. Otherwise answer "no".')
-  let counter = 0
 
-  while (counter < 3) {
-    let magicNumber = getRandomNumber(1, 100)
-
-    const correctAnswer = primeOrNot(magicNumber)
-
-    console.log(`Question: ${magicNumber}`)
-    let answer = readlineSync.question('Your answer: ')
-
-    if (answer === correctAnswer) {
-      console.log('Correct!')
-      counter += 1
-    }
-    else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. Let's try again, ${userName}!`)
-      break
-    }
+  const generateQuestion = () => {
+    let randomNumber = getRandomNumber(1, 100)
+    const correctAnswer = primeOrNot(randomNumber)
+    console.log(`Question: ${randomNumber}`)
+    return correctAnswer
   }
 
-  if (counter === 3) {
-    console.log(`Congratulations, ${userName}!`)
-  }
+  gameAction(generateQuestion, userName)
 }
 
 export default gamePrime
