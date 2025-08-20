@@ -7,7 +7,7 @@ const gameGCD = () => {
     const a = getRandomNumber(1, 25)
     const b = getRandomNumber(1, 25)
     const correctAnswer = getGCD(a, b)
-    console.log(`Question: ${a}, ${b}`)
+    console.log(`Question: ${a} ${b}`)
     return correctAnswer
   }
 
