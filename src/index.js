@@ -11,10 +11,10 @@ const greeting = (task) => {
 const gameAction = (generateQuestion, userName) => {
   let counter = 0
   while (counter < 3) {
-    let correctAnswer = String(generateQuestion())
+    let correctAnswer = generateQuestion()
     let answer = readlineSync.question('Your answer: ')
 
-    if (answer === correctAnswer) {
+    if (answer === String(correctAnswer)) {
       console.log('Correct!')
       counter += 1
     }
