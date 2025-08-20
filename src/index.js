@@ -58,14 +58,16 @@ const getGCD = (a, b) => {
 }
 
 const getProgression = (a, b) => {
-  const progressionArray = [a]
-  while (progressionArray.length !== 10) {
-    const x = a + b
-    progressionArray.push(x)
-    a = x
+  let progression = []
+  const start = a
+  const step = b
+  for (let index = 0; index < 10; index +=1) {
+    let currentItem = start + index * step  
+    progression.push(currentItem)
   }
-  return progressionArray
+  return progression
 }
+
 
 const primeNumber = (number) => {
   let result = true

@@ -8,9 +8,9 @@ const gameProgression = () => {
     const b = getRandomNumber(1, 15)
     const index = getRandomNumber(0, 10)
     const progression = getProgression(a, b)
-    let randomProgressionNumber = progression[index]
-    let correctAnswer = randomProgressionNumber
-    const question = progression.join().replace(`${randomProgressionNumber},`, '..,').replaceAll(',', ' ')
+    // let randomProgressionNumber = progression[index]
+    let correctAnswer = a + index*b
+    const question = progression.join().replace(`${correctAnswer},`, '..,').replaceAll(',', ' ')
     console.log(`Question: ${question}`)
     return correctAnswer
   }
