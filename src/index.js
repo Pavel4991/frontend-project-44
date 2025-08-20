@@ -8,6 +8,26 @@ const greeting = (task) => {
   return userName
 }
 
+const gameAction = (generateQuestion, userName) => {
+  let counter = 0
+  while (counter < 3) {
+    let correctAnswer = String(generateQuestion())
+    let answer = readlineSync.question('Your answer: ')
+
+    if (answer === correctAnswer) {
+      console.log('Correct!')
+      counter += 1
+    }
+    else {
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. Let's try again, ${userName}!`)
+      break
+    }
+  }
+  if (counter === 3) {
+    console.log(`Congratulations, ${userName}!`)
+  }
+}
+
 const getRandomNumber = (min, max) => {
   return (Math.floor(Math.random() * max + min))
 }
@@ -66,4 +86,4 @@ const primeOrNot = (number) => {
   return primeNumber(number) === true ? 'yes' : 'no'
 }
 
-export { getRandomNumber, greeting, addition, subtraction, multiplication, getGCD, getProgression, primeNumber, primeOrNot }
+export { getRandomNumber, greeting, addition, subtraction, multiplication, getGCD, getProgression, primeNumber, primeOrNot, gameAction }
