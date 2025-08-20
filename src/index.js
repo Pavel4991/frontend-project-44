@@ -47,4 +47,23 @@ const getProgression = (a, b) => {
   return progressionArray
 }
 
-export { getRandomNumber, greeting, addition, subtraction, multiplication, getGCD, getProgression }
+const primeNumber = (number) => {
+  let result = true
+
+  if (number <= 1) {
+    result = false
+  }
+
+  for (let i = number - 1; i > 1; i -= 1) {
+    if (number % i === 0) {
+      result = false
+    }
+  }
+  return result
+}
+
+const primeOrNot = (number) => {
+  return primeNumber(number) === true ? 'yes' : 'no'
+}
+
+export { getRandomNumber, greeting, addition, subtraction, multiplication, getGCD, getProgression, primeNumber, primeOrNot }

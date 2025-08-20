@@ -1,17 +1,17 @@
 import readlineSync from 'readline-sync'
-import { getRandomNumber, greeting, getGCD } from '../index.js'
+import { getRandomNumber, greeting, primeOrNot } from '../index.js'
 
-const gameGCD = () => {
-  let userName = greeting('Find the greatest common divisor of given numbers.')
+const gamePrime = () => {
+  let userName = greeting('Answer "yes" if given number is prime. Otherwise answer "no".')
   let counter = 0
 
   while (counter < 3) {
-    const a = getRandomNumber(1, 25)
-    const b = getRandomNumber(1, 25)
-    const correctAnswer = getGCD(a, b)
+    let magicNumber = getRandomNumber(1, 100)
 
-    console.log(`Question: ${a}, ${b}`)
-    let answer = Number(readlineSync.question('Your answer: '))
+    const correctAnswer = primeOrNot(magicNumber)
+
+    console.log(`Question: ${magicNumber}`)
+    let answer = readlineSync.question('Your answer: ')
 
     if (answer === correctAnswer) {
       console.log('Correct!')
@@ -28,4 +28,4 @@ const gameGCD = () => {
   }
 }
 
-export default gameGCD
+export default gamePrime
